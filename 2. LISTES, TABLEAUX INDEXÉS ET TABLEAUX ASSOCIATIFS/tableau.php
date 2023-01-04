@@ -56,3 +56,50 @@ foreach ($pays as $item => $value) {
     echo $value . " " . $item;
     echo "</pre>";
 }
+
+function enumerer($t)
+{
+
+    foreach ($t as $item => $valeur) {
+        echo $valeur . '=>' . $item . '<br>';
+    }
+    return;
+}
+
+echo enumerer($pays);
+
+echo "Parcourir le tableau associatif avec boucle foreach : <br>";
+
+foreach ($pays as $key => $value) {
+    echo "{$key} => {$value} <br>";
+}
+print_r($pays);
+
+echo "<br>";
+echo "<hr>";
+// 12 - La fonction ajouter() peut s'écrire :
+
+
+
+function ajouter($t)
+{
+
+    $t["pays"] = "capitale";
+    foreach ($t as $item => $valeur) {
+        echo $valeur . '=>' . $item . '<br>';
+    }
+
+    return;
+}
+
+echo "<br>";
+
+echo ajouter($pays);
+
+echo "<br>";
+
+// 12 - la fonction ajouter($t) reçoit une copie du tableau $pays. 
+// Ainsi c'est cette copie du Tableau $pays qui est modifiée. 
+// Le Tableau initial n'est pas modifié !!!
+
+var_dump($pays);
